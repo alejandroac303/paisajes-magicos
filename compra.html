@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>Paquete Tour Mágico - Paisaje Mágico</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 15px;
+            background-color: #ffffff;
+        }
+
+        .contenedor {
+            border: 3px solid #208060;
+            padding: 12px;
+            background-color: #ffffff;
+        }
+
+        .cabecera {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 6px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ff0000;
+        }
+
+        .logo-img {
+            width: 260px;
+            height: auto;
+        }
+
+        .titulo-cabecera {
+            font-size: 26px;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .avion-img {
+            width: 280px;
+            height: auto;
+        }
+
+        .cuerpo {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 12px;
+        }
+
+        .menu a {
+            display: block;
+            text-decoration: none;
+        }
+
+        .menu button {
+            display: block;
+            width: 100%;
+            margin: 6px 0;
+            padding: 8px;
+            background-color: #b0e8d8;
+            border: 1px solid #208060;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .menu button:hover {
+            background-color: #70d0b0;
+        }
+
+        .zona-contenido {
+            border: 2px solid #208060;
+            background-color: #e8f8f8;
+            padding: 25px;
+            overflow-x: auto;
+        }
+
+        .tabla-paquetes {
+            width: 100%;
+            min-width: 950px;
+            border-collapse: collapse;
+            background-color: #ffffff;
+        }
+
+        .tabla-paquetes th,
+        .tabla-paquetes td {
+            border: 1px solid #208060;
+            padding: 10px;
+            vertical-align: middle;
+            font-size: 16px;
+        }
+
+        .tabla-paquetes th {
+            background-color: #d0f0e8;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .centrado {
+            text-align: center;
+        }
+
+        .check::before {
+            content: "✅ ";
+        }
+
+        .enlace-pago {
+            color: #000000;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .enlace-pago:hover {
+            color: #208060;
+            text-decoration: underline;
+        }
+
+        .icono-tarjeta {
+            width: 24px;
+            height: 24px;
+        }
+
+        .icono-banco {
+            width: 24px;
+            height: 24px;
+        }
+
+        .icono-efectivo {
+            width: 24px;
+            height: 24px;
+        }
+
+        .icono-nequi {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+
+        /* TABLET */
+        @media (max-width: 900px) {
+            .cuerpo {
+                grid-template-columns: 1fr;
+            }
+            .zona-contenido {
+                margin: 20px 0;
+            }
+            .cabecera {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+                text-align: center;
+            }
+            .logo-img, .avion-img {
+                width: 200px;
+            }
+            .titulo-cabecera {
+                font-size: 21px;
+            }
+        }
+
+        /* CELULAR */
+        @media (max-width: 500px) {
+            body {
+                margin: 7px;
+            }
+            .logo-img, .avion-img {
+                width: 160px;
+            }
+            .titulo-cabecera {
+                font-size: 17px;
+            }
+            .tabla-paquetes th,
+            .tabla-paquetes td {
+                padding: 6px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="cabecera">
+            <img src="img/logo.png" alt="Logo Paisaje Mágico" class="logo-img">
+            <div class="titulo-cabecera">AGENCIA DE VIAJES</div>
+            <img src="img/avion.png" alt="Avión" class="avion-img">
+        </div>
+
+        <div class="cuerpo">
+            <div class="menu">
+                <a href="index.html"><button>Inicio</button></a>
+                <a href="mision.html"><button>Mision y Vision</button></a>
+                <a href="objetivos.html"><button>Objetivos especificos</button></a>
+                <a href="historia.html"><button>Historia de Pereira y Armenia</button></a>
+                <a href="fotosArmenia.html"><button>fotos armenia</button></a>
+                <a href="fotosPereira.html"><button>Fotos pereira</button></a>
+                <a href="quienesSomos.html"><button>¿Quienes Somos?</button></a>
+                <a href="contactenos.html"><button>Contactenos</button></a>
+                <a href="ubicacion.html"><button>Ubicación</button></a>
+                <a href="video.html"><button>Video De Pereira y Armenia</button></a>
+            </div>
+
+            <div class="zona-contenido">
+                <table class="tabla-paquetes">
+                    <thead>
+                        <tr>
+                            <th>NOMBRE DEL PAQUETE</th>
+                            <th>DURACIÓN</th>
+                            <th>¿QUÉ INCLUYE?</th>
+                            <th>PRECIO POR PERSONA</th>
+                            <th>DÍAS ESPECIALES / DESCUENTOS</th>
+                            <th>MESES ESPECIALES</th>
+                            <th>FORMAS DE PAGO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="5">
+                                <strong>TOUR MÁGICO:<br>
+                                PEREIRA Y ARMENIA</strong><br>
+                                (Viaducto, Parques,<br>
+                                Miradores, Finca<br>
+                                Cafetera)
+                            </td>
+                            <td rowspan="5" class="centrado">4 Días / 3 Noches</td>
+                            <td class="check">Alojamiento en hotel turista</td>
+                            <td>$420.00 USD</td>
+                            <td>• Descuento 10%:<br>Grupos de 5 o más personas</td>
+                            <td>• Enero y febrero:<br>Descuento 8%</td>
+                            <td>
+                                <a href="pagos.html" class="enlace-pago">
+                                    <img src="img/tarjeta.png" alt="Tarjeta de crédito" class="icono-tarjeta"> Tarjeta de crédito
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Traslados aeropuerto - hotel - aeropuerto</td>
+                            <td>$1.200.000 COP</td>
+                            <td>• Días especiales:<br>Lunes a Miércoles +10%</td>
+                            <td>• Julio y agosto:<br>Temporada alta +10%</td>
+                            <td>
+                                <a href="pagos.html" class="enlace-pago">
+                                    <img src="img/tarjeta.png" alt="Tarjeta de débito" class="icono-tarjeta"> Tarjeta de débito
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Tours guiados por ambos lugares</td>
+                            <td></td>
+                            <td>• Días festivos: +15%</td>
+                            <td>• Abril y noviembre:<br>Descuento 12%</td>
+                            <td>
+                                <a href="pagos.html" class="enlace-pago">
+                                    <img src="img/banco.png" alt="Transferencia bancaria" class="icono-banco"> Transferencia bancaria
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Visita a finca con degustación de café</td>
+                            <td></td>
+                            <td>• Días festivos: +15%</td>
+                            <td></td>
+                            <td>
+                                <a href="pagos.html" class="enlace-pago">
+                                    <img src="img/dinero.png" alt="Pago en efectivo" class="icono-efectivo"> Pago en efectivo
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Transporte entre ciudades<br><br>
+                                <strong>ALIMENTACIÓN COMPLETA INCLUIDA</strong><br>
+                                (desayunos, almuerzos, cenas y refrigerios)
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <a href="pagos.html" class="enlace-pago">
+                                    <img src="img/nequi.png" alt="Nequi" class="icono-nequi"> Nequi
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

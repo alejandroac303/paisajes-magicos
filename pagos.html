@@ -1,0 +1,259 @@
+```
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>Formulario de Pago - Paisaje Mágico</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 15px;
+            background-color: #ffffff;
+        }
+
+        .contenedor {
+            border: 3px solid #208060;
+            padding: 12px;
+            background-color: #ffffff;
+        }
+
+        .cabecera {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 6px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #ff0000;
+        }
+
+        .logo-img {
+            width: 260px;
+            height: auto;
+        }
+
+        .titulo-cabecera {
+            font-size: 26px;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .avion-img {
+            width: 280px;
+            height: auto;
+        }
+
+        .cuerpo {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 12px;
+        }
+
+        .menu a {
+            display: block;
+            text-decoration: none;
+        }
+
+        .menu button {
+            display: block;
+            width: 100%;
+            margin: 6px 0;
+            padding: 8px;
+            background-color: #b0e8d8;
+            border: 1px solid #208060;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .menu button:hover {
+            background-color: #70d0b0;
+        }
+
+        .zona-contenido {
+            border: 2px solid #208060;
+            background-color: #dff8ee;
+            padding: 30px;
+            position: relative;
+            min-height: 350px;
+            max-width: 100%;
+            width: 100%;
+        }
+
+        .titulo-pago {
+            border: 1px solid #999;
+            background: linear-gradient(to right, #e8e8f0, #d8d8e8);
+            padding: 15px 40px;
+            font-size: 22px;
+            color: #333;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .opcion-titulo {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .instruccion {
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        .campo {
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .campo input {
+            border: none;
+            border-bottom: 1px solid #000;
+            background: transparent;
+            padding: 1px 3px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .nequi-linea {
+            margin: 20px 0;
+            font-size: 15px;
+        }
+
+        .boton-pagar {
+            background-color: #00b359;
+            color: #ffffff;
+            border: none;
+            padding: 5px 18px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-left: 8px;
+        }
+
+        .boton-pagar:hover {
+            background-color: #00994d;
+        }
+
+        .proceso {
+            margin-top: 15px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .check {
+            color: #009933;
+            font-weight: bold;
+        }
+
+        .separador {
+            border-bottom: 1px solid #ccc;
+            margin: 25px 0;
+        }
+
+        /* TABLET */
+        @media (max-width: 900px) {
+            .cuerpo {
+                grid-template-columns: 1fr;
+            }
+
+            .cabecera {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+                text-align: center;
+            }
+
+            .logo-img, .avion-img {
+                width: 200px;
+            }
+
+            .titulo-cabecera {
+                font-size: 21px;
+            }
+        }
+
+        /* CELULAR */
+        @media (max-width: 500px) {
+            body {
+                margin: 7px;
+            }
+
+            .logo-img, .avion-img {
+                width: 160px;
+            }
+
+            .titulo-cabecera {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="cabecera">
+            <img src="img/logo.png" alt="Logo Paisaje Mágico" class="logo-img">
+            <div class="titulo-cabecera">AGENCIA DE VIAJES</div>
+            <img src="img/avion.png" alt="Avión" class="avion-img">
+        </div>
+
+        <div class="cuerpo">
+            <div class="menu">
+                <a href="index.html"><button>Inicio</button></a>
+                <a href="mision.html"><button>Mision y Vision</button></a>
+                <a href="objetivos.html"><button>Objetivos especificos</button></a>
+                <a href="historia.html"><button>Historia de Pereira y Armenia</button></a>
+                <a href="fotosArmenia.html"><button>fotos armenia</button></a>
+                <a href="fotosPereira.html"><button>Fotos pereira</button></a>
+                <a href="quienesSomos.html"><button>¿Quienes Somos?</button></a>
+                <a href="contactenos.html"><button>Contactenos</button></a>
+                <a href="ubicacion.html"><button>Ubicación</button></a>
+                <a href="video.html"><button>Video De Pereira y Armenia</button></a>
+            </div>
+
+            <div class="zona-contenido">
+                <h2 class="titulo-pago">Forma de Pago</h2>
+
+                <div class="opcion-titulo">🟧 OPCIÓN 1: TARJETA DE CRÉDITO</div>
+                <div class="instruccion">Ingresa los datos tal cual aparecen en tu tarjeta:</div>
+
+                <div class="campo">
+                    ☐ Nombre y apellidos: <input type="text" style="width:280px;">
+                </div>
+                <div class="campo">
+                    🟦 Número de tarjeta: <input type="text" maxlength="4" style="width:45px;"> - 
+                    <input type="text" maxlength="4" style="width:45px;"> - 
+                    <input type="text" maxlength="4" style="width:45px;"> - 
+                    <input type="text" maxlength="4" style="width:45px;"> (16 dígitos)
+                </div>
+                <div class="campo">
+                    ☐ Fecha vencimiento: <input type="text" maxlength="2" style="width:25px;"> / 
+                    <input type="text" maxlength="2" style="width:25px;"> (MM / AA)
+                </div>
+                <div class="campo">
+                    🔒 Código seguridad CVV: ____ (3 dígitos atrás)
+                    <a href="factura.html"><button class="boton-pagar">PAGAR AHORA</button></a>
+                </div>
+
+                <div class="separador"></div>
+
+                <div class="nequi-linea">
+                    📱 Nequi - número de transferencia: 3152555889
+                    <a href="factura.html"><button class="boton-pagar">Pagar</button></a>
+                </div>
+
+                <div class="proceso">
+                    <span class="check">✅ PROCESO:</span> Se verifica → SE DESCUENTA AL INSTANTE → Mensaje: ¡PAGO REALIZADO CON ÉXITO! → Reserva confirmada YA ✅
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```

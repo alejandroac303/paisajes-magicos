@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Historia de Pereira y Armenia - Paisaje Mágico">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>Historia de Pereira y Armenia - Paisaje Mágico</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 15px;
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .salto-navegacion {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #208060;
+            color: #ffffff;
+            padding: 8px 16px;
+            z-index: 1000;
+            transition: top 0.3s ease;
+        }
+
+        .salto-navegacion:focus {
+            top: 0;
+        }
+
+        .contenedor {
+            border: 3px solid #208060;
+            padding: 12px;
+            background-color: #ffffff;
+        }
+
+        .cabecera {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #d10000;
+        }
+
+        .logo-img {
+            width: 260px;
+            height: auto;
+        }
+
+        .titulo-cabecera {
+            font-size: 26px;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .avion-img {
+            width: 280px;
+            height: auto;
+        }
+
+        .cuerpo {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 12px;
+        }
+
+        .menu a {
+            display: block;
+            text-decoration: none;
+        }
+
+        .menu button {
+            display: block;
+            width: 100%;
+            margin: 6px 0;
+            padding: 10px 8px;
+            background-color: #b0e8d8;
+            border: 1px solid #208060;
+            cursor: pointer;
+            font-size: 14px;
+            color: #000000;
+            transition: background-color 0.2s ease;
+        }
+
+        .menu button:hover, .menu button:focus {
+            background-color: #70d0b0;
+            outline: 2px solid #208060;
+            outline-offset: 2px;
+        }
+
+        .zona-contenido {
+            border: 2px solid #208060;
+            background-color: #dff8ee;
+            padding: 25px;
+        }
+
+        .contenido-historia {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .columna {
+            width: 48%;
+            background-color: #b2ebd8;
+            padding: 20px;
+            border: 1px solid #208060;
+        }
+
+        .columna h2 {
+            text-align: center;
+            color: #000000;
+            margin-bottom: 15px;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .columna img {
+            width: 50%;
+            height: auto;
+            display: block;
+            margin: 0 auto 15px;
+        }
+
+        .columna p {
+            color: #000000;
+            line-height: 1.5;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        /* TABLET */
+        @media (max-width: 900px) {
+            .cuerpo {
+                grid-template-columns: 1fr;
+            }
+
+            .contenido-historia {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .columna {
+                width: 100%;
+            }
+
+            .columna img {
+                width: 40%;
+            }
+
+            .cabecera {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+                text-align: center;
+            }
+
+            .logo-img, .avion-img {
+                width: 200px;
+            }
+
+            .titulo-cabecera {
+                font-size: 21px;
+            }
+        }
+
+        /* CELULAR */
+        @media (max-width: 500px) {
+            body {
+                margin: 7px;
+            }
+
+            .logo-img, .avion-img {
+                width: 160px;
+            }
+
+            .titulo-cabecera {
+                font-size: 17px;
+            }
+
+            .zona-contenido {
+                padding: 15px;
+            }
+
+            .contenido-historia {
+                gap: 15px;
+            }
+
+            .columna img {
+                width: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#contenido-principal" class="salto-navegacion">Saltar al contenido principal</a>
+
+    <div class="contenedor">
+        <header class="cabecera" role="banner">
+            <img src="img/logo.png" alt="Logo de Paisaje Mágico - Agencia de Viajes" class="logo-img">
+            <div class="titulo-cabecera">AGENCIA DE VIAJES</div>
+            <img src="img/avion.png" alt="Ilustración de un avión volando" class="avion-img">
+        </header>
+
+        <div class="cuerpo">
+            <nav class="menu" role="navigation" aria-label="Menú principal de navegación">
+                <a href="index.html"><button>Inicio</button></a>
+                <a href="mision.html"><button>Misión y Visión</button></a>
+                <a href="objetivos.html"><button>Objetivos Específicos</button></a>
+                <a href="historia.html"><button aria-current="page">Historia de Pereira y Armenia</button></a>
+                <a href="fotosArmenia.html"><button>Fotos de Armenia</button></a>
+                <a href="fotosPereira.html"><button>Fotos de Pereira</button></a>
+                <a href="quienesSomos.html"><button>¿Quiénes Somos?</button></a>
+                <a href="contactenos.html"><button>Contáctenos</button></a>
+                <a href="ubicacion.html"><button>Ubicación</button></a>
+                <a href="video.html"><button>Video de Pereira y Armenia</button></a>
+            </nav>
+
+            <main id="contenido-principal" class="zona-contenido" role="main">
+                <div class="contenido-historia">
+                    <!-- COLUMNA PEREIRA -->
+                    <div class="columna">
+                        <h2>HISTORIA DE PEREIRA</h2>
+                        <img src="img/pereira.png" alt="Pereira - Capital de Risaralda">
+                        <p>Pereira fue fundada el 30 de agosto de 1863 por un grupo de colonos antioqueños liderados por Remigio Antonio Cañarte. Gracias al auge del café y su ubicación estratégica, se convirtió en un importante centro comercial e industrial. Hoy es reconocida como la 'Perla del Otún' y capital de Risaralda.</p>
+                    </div>
+
+                    <!-- COLUMNA ARMENIA -->
+                    <div class="columna">
+                        <h2>HISTORIA DE ARMENIA</h2>
+                        <img src="img/armenia.png" alt="Armenia - Ciudad Milagro">
+                        <p>Armenia, conocida como la 'Ciudad Milagro', se caracteriza por su espíritu de resiliencia y su cultura cafetera. Su paisaje cultural fue declarado Patrimonio de la Humanidad por la UNESCO en 2011. Es un destino clave gracias al Parque del Café y el Valle de Cocora.</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

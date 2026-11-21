@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencia de Viajes Paisaje Mágico</title>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 15px;
+            background-color: #ffffff;
+        }
+
+        .contenedor {
+            border: 3px solid #208060;
+            padding: 12px;
+            background-color: #ffffff;
+        }
+
+        .cabecera {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #ff0000;
+        }
+
+        .logo-img {
+            width: 260px;
+            height: auto;
+        }
+
+        .titulo-cabecera {
+            font-size: 26px;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .avion-img {
+            width: 280px;
+            height: auto;
+        }
+
+        .cuerpo {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 12px;
+        }
+
+        .menu a {
+            display: block;
+            text-decoration: none;
+        }
+
+        .menu button {
+            display: block;
+            width: 100%;
+            margin: 6px 0;
+            padding: 8px;
+            background-color: #b0e8d8;
+            border: 1px solid #208060;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .menu button:hover {
+            background-color: #70d0b8;
+        }
+
+        .zona-contenido {
+            border: 2px solid #208060;
+            background-color: #dff8ee;
+            padding: 20px;
+            max-width: 820px;
+            margin: 30px auto;
+        }
+
+        .columna-izq {
+            float: left;
+            width: 130px;
+            margin-top: 30px;
+        }
+
+        .boton-mas-fotos {
+            display: block;
+            margin-bottom: 35px;
+            padding: 8px 16px;
+            background-color: #b0e8d8;
+            border: 1px solid #208060;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .imagen-jeep {
+            float: right;
+            width: calc(100% - 150px);
+            height: auto;
+        }
+
+        .icono-compra {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            animation: mover 2s ease-in-out infinite alternate;
+            cursor: pointer;
+        }
+
+        @keyframes mover {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-10px); }
+        }
+
+        .limpiar {
+            clear: both;
+        }
+
+        @media (max-width: 900px) {
+            .cabecera {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            .cuerpo {
+                grid-template-columns: 1fr;
+            }
+            .logo-img, .avion-img {
+                width: 180px;
+            }
+            .titulo-cabecera {
+                font-size: 20px;
+            }
+            .columna-izq, .imagen-jeep {
+                float: none;
+                width: 100%;
+                margin-bottom: 20px;
+                margin-top: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .zona-contenido {
+                padding: 12px;
+            }
+            .icono-compra {
+                width: 45px;
+                height: 45px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <header class="cabecera">
+            <img src="img/logo.png" alt="Logo" class="logo-img">
+            <h1 class="titulo-cabecera">AGENCIA DE VIAJES</h1>
+            <img src="img/avion.png" alt="Avión" class="avion-img">
+        </header>
+
+        <div class="cuerpo">
+            <nav class="menu">
+                <a href="index.html"><button>Inicio</button></a>
+                <a href="mision.html"><button>Mision y Vision</button></a>
+                <a href="objetivos.html"><button>Objetivos especificos</button></a>
+                <a href="historia.html"><button>Historia de Pereira y Armenia</button></a>
+                <a href="fotosArmenia.html"><button>fotos armenia</button></a>
+                <a href="fotosPereira.html"><button>Fotos pereira</button></a>
+                <a href="quienesSomos.html"><button>¿Quienes Somos?</button></a>
+                <a href="contactenos.html"><button>Contactenos</button></a>
+                <a href="ubicacion.html"><button>Ubicación</button></a>
+                <a href="video.html"><button>Video De Pereira y Armenia</button></a>
+            </nav>
+
+            <main class="zona-contenido" x-data>
+                <div class="columna-izq">
+                    <a href="masFotos.html">
+                        <button class="boton-mas-fotos">Mas fotos</button>
+                    </a>
+                    <a href="compra.html">
+                        <img src="img/compra.png" alt="Carrito de compra" class="icono-compra">
+                    </a>
+                </div>
+                <img src="img/jeep.png" alt="Jeep con bandera de Colombia" class="imagen-jeep">
+                <div class="limpiar"></div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

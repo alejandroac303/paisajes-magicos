@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>¿Quiénes Somos? - Paisaje Mágico</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 15px;
+            background-color: #ffffff;
+        }
+
+        .contenedor {
+            border: 3px solid #208060;
+            padding: 12px;
+            background-color: #ffffff;
+        }
+
+        .cabecera {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #ff0000;
+        }
+
+        .logo-img {
+            width: 260px;
+            height: auto;
+        }
+
+        .titulo-cabecera {
+            font-size: 26px;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .avion-img {
+            width: 280px;
+            height: auto;
+        }
+
+        .cuerpo {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 12px;
+        }
+
+        .menu a {
+            display: block;
+            text-decoration: none;
+        }
+
+        .menu button {
+            display: block;
+            width: 100%;
+            margin: 6px 0;
+            padding: 8px;
+            background-color: #b0e8d8;
+            border: 1px solid #208060;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .menu button:hover {
+            background-color: #70d0b0;
+        }
+
+        .zona-contenido {
+            border: 2px solid #208060;
+            background: linear-gradient(to bottom, #dff8ee, #92d8c8);
+            padding: 30px;
+            position: relative;
+            min-height: 300px;
+        }
+
+        .contenido-texto h2 {
+            font-size: 20px;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        .contenido-texto p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #000000;
+            margin-bottom: 15px;
+            max-width: 80%;
+        }
+
+        .icono-compra {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 64px;
+            height: 64px;
+            animation: moverCarrito 1.2s ease-in-out infinite;
+            background-color: rgba(255, 255, 255, 0.92);
+            border-radius: 50%;
+            padding: 11px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.18);
+        }
+
+        @keyframes moverCarrito {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* TABLET */
+        @media (max-width: 900px) {
+            .cuerpo {
+                grid-template-columns: 1fr;
+            }
+
+            .zona-contenido {
+                max-width: 100%;
+                margin: 20px 0;
+            }
+
+            .contenido-texto p {
+                max-width: 100%;
+            }
+
+            .cabecera {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+                text-align: center;
+            }
+
+            .logo-img, .avion-img {
+                width: 200px;
+            }
+
+            .titulo-cabecera {
+                font-size: 21px;
+            }
+        }
+
+        /* CELULAR */
+        @media (max-width: 500px) {
+            body {
+                margin: 7px;
+            }
+
+            .logo-img, .avion-img {
+                width: 160px;
+            }
+
+            .titulo-cabecera {
+                font-size: 17px;
+            }
+
+            .icono-compra {
+                width: 50px;
+                height: 50px;
+                top: 10px;
+                right: 10px;
+                padding: 9px;
+            }
+
+            .contenido-texto p {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="cabecera">
+            <img src="img/logo.png" alt="Logo Paisaje Mágico" class="logo-img">
+            <div class="titulo-cabecera">AGENCIA DE VIAJES</div>
+            <img src="img/avion.png" alt="Avión" class="avion-img">
+        </div>
+
+        <div class="cuerpo">
+            <div class="menu">
+                <a href="index.html"><button>Inicio</button></a>
+                <a href="mision.html"><button>Mision y Vision</button></a>
+                <a href="objetivos.html"><button>Objetivos especificos</button></a>
+                <a href="historia.html"><button>Historia de Pereira y Armenia</button></a>
+                <a href="fotosArmenia.html"><button>fotos armenia</button></a>
+                <a href="fotosPereira.html"><button>Fotos pereira</button></a>
+                <button>¿Quienes Somos?</button>
+                <a href="contactenos.html"><button>Contactenos</button></a>
+                <a href="ubicacion.html"><button>Ubicación</button></a>
+                <a href="video.html"><button>Video De Pereira y Armenia</button></a>
+            </div>
+
+            <div class="zona-contenido">
+                <a href="compra.html">
+                    <img src="img/compra.png" alt="Carrito de compras" class="icono-compra">
+                </a>
+
+                <div class="contenido-texto">
+                    <h2>¿QUIENES SOMOS?</h2>
+                    
+                    <p>Somos un equipo originario de Pereira y Armenia, dos ciudades que hacen parte del Eje Cafetero colombiano.</p>
+                    
+                    <p>Nuestro trabajo se centra en mostrar el paisaje mágico que une y distingue a estas tierras: desde las vistas nocturnas del viaducto de Pereira hasta los cerros verdes que rodean a Armenia.</p>
+                    
+                    <p>Somos identidad y riqueza del territorio, narradores de la belleza natural y urbana que hace única a nuestra región, donde cada rincón guarda un encanto mágico propio.</p>
+                    
+                    <p>Nos dedicamos a destacar cómo el paisaje mágico de Pereira y Armenia forma parte de nuestra identidad y esencia.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

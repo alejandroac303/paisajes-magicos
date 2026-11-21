@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paisaje Mágico - Agencia de Viajes especializada en turismo en Pereira y Armenia">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>Paisaje Mágico - Agencia de Viajes</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 15px;
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Enlace para saltar navegación - WCAG */
+        .salto-navegacion {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #208060;
+            color: #ffffff;
+            padding: 8px 16px;
+            z-index: 1000;
+            transition: top 0.3s ease;
+        }
+
+        .salto-navegacion:focus {
+            top: 0;
+        }
+
+        .contenedor {
+            border: 3px solid #208060;
+            padding: 12px;
+            background-color: #ffffff;
+        }
+
+        .cabecera {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #d10000;
+        }
+
+        .logo-img {
+            width: 260px;
+            height: auto;
+        }
+
+        .titulo-cabecera {
+            font-size: 26px;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .avion-img {
+            width: 280px;
+            height: auto;
+        }
+
+        .cuerpo {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 12px;
+        }
+
+        .menu {
+            outline: none;
+        }
+
+        .menu a {
+            display: block;
+            text-decoration: none;
+        }
+
+        .menu button {
+            display: block;
+            width: 100%;
+            margin: 6px 0;
+            padding: 10px 8px;
+            background-color: #b0e8d8;
+            border: 1px solid #208060;
+            cursor: pointer;
+            font-size: 14px;
+            color: #000000;
+            transition: background-color 0.2s ease;
+        }
+
+        .menu button:hover, .menu button:focus {
+            background-color: #70d0b0;
+            outline: 2px solid #208060;
+            outline-offset: 2px;
+        }
+
+        .zona-contenido {
+            border: 2px solid #208060;
+            background-color: #dff8ee;
+            padding: 12px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            max-width: 820px;
+            margin: 30px auto;
+        }
+
+        .imagen-principal {
+            width: 34%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+        }
+
+        .texto-bienvenida {
+            width: 62%;
+            text-align: center;
+        }
+
+        .texto-bienvenida h1 {
+            margin-bottom: 10px;
+            color: #105038;
+            font-size: 1.4em;
+        }
+
+        .texto-bienvenida p {
+            color: #333333;
+        }
+
+        .icono-compra {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 64px;
+            height: 64px;
+            animation: moverCarrito 1.2s ease-in-out infinite;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            padding: 11px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.18);
+            transition: transform 0.2s ease;
+        }
+
+        .icono-compra:hover, .icono-compra:focus {
+            transform: scale(1.1);
+        }
+
+        @keyframes moverCarrito {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* TABLET */
+        @media (max-width: 900px) {
+            .cuerpo {
+                grid-template-columns: 1fr;
+            }
+
+            .zona-contenido {
+                flex-direction: column;
+                max-width: 100%;
+                margin: 20px 0;
+            }
+
+            .imagen-principal, .texto-bienvenida {
+                width: 100%;
+            }
+
+            .cabecera {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+                text-align: center;
+            }
+
+            .logo-img, .avion-img {
+                width: 200px;
+            }
+
+            .titulo-cabecera {
+                font-size: 21px;
+            }
+        }
+
+        /* CELULAR */
+        @media (max-width: 500px) {
+            body {
+                margin: 7px;
+            }
+
+            .logo-img, .avion-img {
+                width: 160px;
+            }
+
+            .titulo-cabecera {
+                font-size: 17px;
+            }
+
+            .icono-compra {
+                width: 50px;
+                height: 50px;
+                top: 8px;
+                right: 8px;
+                background-color: rgba(255, 255, 255, 0.95);
+                padding: 9px;
+                box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Saltar al contenido - Accesibilidad WCAG -->
+    <a href="#contenido-principal" class="salto-navegacion">Saltar al contenido principal</a>
+
+    <div class="contenedor">
+        <header class="cabecera" role="banner">
+            <img src="img/logo.png" alt="Logo de Paisaje Mágico - Agencia de Viajes" class="logo-img">
+            <div class="titulo-cabecera">AGENCIA DE VIAJES</div>
+            <img src="img/avion.png" alt="Ilustración de un avión volando" class="avion-img">
+        </header>
+
+        <div class="cuerpo">
+            <nav class="menu" role="navigation" aria-label="Menú principal de navegación">
+                <a href="index.html"><button aria-current="page">Inicio</button></a>
+                <a href="mision.html"><button>Misión y Visión</button></a>
+                <a href="objetivos.html"><button>Objetivos Específicos</button></a>
+                <a href="historia.html"><button>Historia de Pereira y Armenia</button></a>
+                <a href="fotosArmenia.html"><button>Fotos de Armenia</button></a>
+                <a href="fotosPereira.html"><button>Fotos de Pereira</button></a>
+                <a href="quienesSomos.html"><button>¿Quiénes Somos?</button></a>
+                <a href="contactenos.html"><button>Contáctenos</button></a>
+                <a href="ubicacion.html"><button>Ubicación</button></a>
+                <a href="video.html"><button>Video de Pereira y Armenia</button></a>
+            </nav>
+
+            <main id="contenido-principal" class="zona-contenido" role="main">
+                <img src="img/parque.png" alt="Vista del parque principal, imagen de bienvenida" class="imagen-principal">
+                <div class="texto-bienvenida">
+                    <h1>BIENVENIDOS A PAISAJE MÁGICO</h1>
+                    <p>HISTORIA DE PEREIRA Y ARMENIA</p>
+                </div>
+                <a href="compra.html" aria-label="Ir al carrito de compras">
+                    <img src="img/compra.png" alt="Ícono de carrito de compras" class="icono-compra">
+                </a>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

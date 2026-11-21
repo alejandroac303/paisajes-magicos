@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencia de Viajes Paisaje Mágico</title>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 15px;
+            background-color: #ffffff;
+        }
+
+        .contenedor {
+            border: 3px solid #208060;
+            padding: 12px;
+            background-color: #ffffff;
+        }
+
+        .cabecera {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #ff0000;
+        }
+
+        .logo-img {
+            width: 260px;
+            height: auto;
+        }
+
+        .titulo-cabecera {
+            font-size: 26px;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .avion-img {
+            width: 280px;
+            height: auto;
+        }
+
+        .cuerpo {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 12px;
+        }
+
+        .menu a {
+            display: block;
+            text-decoration: none;
+        }
+
+        .menu button {
+            display: block;
+            width: 100%;
+            margin: 6px 0;
+            padding: 8px;
+            background-color: #b0e8d8;
+            border: 1px solid #208060;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .menu button:hover {
+            background-color: #70d0b8;
+        }
+
+        .zona-contenido {
+            border: 2px solid #208060;
+            background-color: #dff8ee;
+            padding: 20px;
+            max-width: 1050px;
+            margin: 30px auto;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .icono-casa {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            animation: flotar 2s ease-in-out infinite alternate;
+            cursor: pointer;
+        }
+
+        @keyframes flotar {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-10px); }
+        }
+
+        .cuadro-fotos {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .fila {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .foto-item {
+            text-align: center;
+        }
+
+        .foto-item img {
+            width: 300px;
+            height: auto;
+        }
+
+        .foto-item p {
+            margin-top: 6px;
+            background-color: #43a047;
+            color: white;
+            padding: 6px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 900px) {
+            .cabecera {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            .cuerpo {
+                grid-template-columns: 1fr;
+            }
+            .logo-img, .avion-img {
+                width: 180px;
+            }
+            .titulo-cabecera {
+                font-size: 20px;
+            }
+            .zona-contenido {
+                flex-direction: column;
+            }
+            .fila {
+                flex-direction: column;
+                align-items: center;
+            }
+            .foto-item img {
+                width: 280px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .zona-contenido {
+                padding: 12px;
+            }
+            .foto-item img {
+                width: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <header class="cabecera">
+            <img src="img/logo.png" alt="Logo" class="logo-img">
+            <h1 class="titulo-cabecera">AGENCIA DE VIAJES</h1>
+            <img src="img/avion.png" alt="Avión" class="avion-img">
+        </header>
+
+        <div class="cuerpo">
+            <nav class="menu">
+                <a href="index.html"><button>Inicio</button></a>
+                <a href="mision.html"><button>Mision y Vision</button></a>
+                <a href="objetivos.html"><button>Objetivos especificos</button></a>
+                <a href="historia.html"><button>Historia de Pereira y Armenia</button></a>
+                <a href="fotosArmenia.html"><button>fotos armenia</button></a>
+                <a href="fotosPereira.html"><button>Fotos pereira</button></a>
+                <a href="quienesSomos.html"><button>¿Quienes Somos?</button></a>
+                <a href="contactenos.html"><button>Contactenos</button></a>
+                <a href="ubicacion.html"><button>Ubicación</button></a>
+                <a href="video.html"><button>Video De Pereira y Armenia</button></a>
+            </nav>
+
+            <main class="zona-contenido" x-data>
+                <a href="index.html">
+                    <img src="img/casa.png" alt="Inicio" class="icono-casa">
+                </a>
+
+                <div class="cuadro-fotos">
+                    <div class="fila">
+                        <div class="foto-item">
+                            <img src="img/perviaducto23.png" alt="El Viaducto César Gaviria Trujillo">
+                            <p>EL VIADUCTO CESAR GAVIRIA TRUJILLO</p>
+                        </div>
+                        <div class="foto-item">
+                            <img src="img/pbolivar.png" alt="Parque de Bolívar">
+                            <p>PARQUE DE BOLÍVAR</p>
+                        </div>
+                    </div>
+                    <div class="fila">
+                        <div class="foto-item">
+                            <img src="img/recuentro1.png" alt="El Reencuentro San José">
+                            <p>EL REENCUENTRO SAN JOSÉ</p>
+                        </div>
+                        <div class="foto-item">
+                            <img src="img/lago.png" alt="Parque El Lago">
+                            <p>PARQUE EL LAGO</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

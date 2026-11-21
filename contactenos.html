@@ -1,0 +1,273 @@
+```
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contáctenos - Paisajes Mágicos</title>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 15px;
+            background-color: #ffffff;
+        }
+
+        .contenedor {
+            border: 3px solid #208060;
+            padding: 12px;
+            background-color: #ffffff;
+            width: 100%;
+        }
+
+        .cabecera {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #8b4513;
+        }
+
+        .logo-img {
+            width: 260px;
+            height: auto;
+        }
+
+        .titulo-cabecera {
+            font-size: 26px;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .avion-img {
+            width: 280px;
+            height: auto;
+        }
+
+        .cuerpo {
+            display: flex;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .menu {
+            flex-shrink: 0;
+            width: 200px;
+        }
+
+        .menu a {
+            display: block;
+            text-decoration: none;
+        }
+
+        .menu button {
+            display: block;
+            width: 100%;
+            margin: 6px 0;
+            padding: 8px;
+            background-color: #b0e8d8;
+            border: 1px solid #208060;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .menu button.activo {
+            background-color: #208060;
+            color: white;
+        }
+
+        .menu button:hover {
+            background-color: #70d0b8;
+        }
+
+        .zona-contenido {
+            flex-grow: 1;
+            border: 2px solid #208060;
+            background-color: #ffffff;
+            padding: 40px 30px;
+            min-height: auto; /* ✅ Se ajusta solo */
+        }
+
+        .barra-titulo {
+            background: linear-gradient(to bottom, #e8e8f0, #d0d0e0);
+            border: 1px solid #999;
+            border-radius: 5px;
+            text-align: center;
+            padding: 12px;
+            margin: 0 auto 40px auto;
+            width: 85%;
+        }
+
+        .barra-titulo h2 {
+            font-size: 20px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        @keyframes flotar {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes bailarDerecha {
+            0% { transform: translate(0px, 0px); }
+            25% { transform: translate(10px, -5px); }
+            50% { transform: translate(0px, 0px); }
+            75% { transform: translate(10px, -5px); }
+            100% { transform: translate(0px, 0px); }
+        }
+
+        /* 💻 En computador: iconos en fila horizontal */
+        .fila-iconos {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 30px 20px;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .icono-con-texto {
+            text-align: center;
+            animation: flotar 3s ease-in-out infinite;
+            text-decoration: none;
+        }
+
+        .carrito-bailarin {
+            animation: bailarDerecha 2.5s ease-in-out infinite;
+        }
+
+        .bolita {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px auto;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .bolita img {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .icono-con-texto span {
+            font-size: 16px;
+            color: #000000;
+            font-weight: bold;
+        }
+
+        /* 📱 En celular: se acomoda todo bien */
+        @media (max-width: 768px) {
+            .cuerpo {
+                flex-direction: column;
+            }
+
+            .menu {
+                width: 100%;
+            }
+
+            .fila-iconos {
+                flex-direction: column;
+                gap: 35px;
+                padding: 20px 0;
+            }
+
+            .barra-titulo {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .cabecera {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .logo-img, .avion-img {
+                width: 180px;
+            }
+
+            .titulo-cabecera {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <header class="cabecera">
+            <img src="img/logo.png" alt="Logo" class="logo-img">
+            <h1 class="titulo-cabecera">AGENCIA DE VIAJES</h1>
+            <img src="img/avion.png" alt="Avión" class="avion-img">
+        </header>
+
+        <div class="cuerpo">
+            <nav class="menu">
+                <a href="index.html"><button>Inicio</button></a>
+                <a href="mision.html"><button>Mision y Vision</button></a>
+                <a href="objetivos.html"><button>Objetivos especificos</button></a>
+                <a href="historia.html"><button>Historia de Pereira y Armenia</button></a>
+                <a href="fotosArmenia.html"><button>fotos armenia</button></a>
+                <a href="fotosPereira.html"><button>Fotos pereira</button></a>
+                <a href="quienesSomos.html"><button>¿Quienes Somos?</button></a>
+                <a href="contactenos.html"><button class="activo">Contactenos</button></a>
+                <a href="ubicacion.html"><button>Ubicación</button></a>
+                <a href="video.html"><button>Video De Pereira y Armenia</button></a>
+            </nav>
+
+            <main class="zona-contenido" x-data>
+                <div class="barra-titulo">
+                    <h2>CONTÁCTENOS</h2>
+                </div>
+
+                <div class="fila-iconos">
+                    <a href="pagos.html" class="icono-con-texto carrito-bailarin">
+                        <div class="bolita">
+                            <img src="img/compra.png" alt="Carrito de compras">
+                        </div>
+                    </a>
+
+                    <a href="https://www.instagram.com" target="_blank" class="icono-con-texto">
+                        <div class="bolita">
+                            <img src="img/nitro.png" alt="Instagram">
+                        </div>
+                        <span>Instagram</span>
+                    </a>
+
+                    <a href="https://www.facebook.com" target="_blank" class="icono-con-texto">
+                        <div class="bolita">
+                            <img src="img/facebook.png" alt="Facebook">
+                        </div>
+                        <span>Facebook</span>
+                    </a>
+
+                    <a href="https://www.tiktok.com" target="_blank" class="icono-con-texto">
+                        <div class="bolita">
+                            <img src="img/tiktok.png" alt="TikTok">
+                        </div>
+                        <span>TikTok</span>
+                    </a>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
+```
+
+

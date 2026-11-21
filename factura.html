@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>Comprobante de Pago - Paisaje Mágico</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 15px;
+            background-color: #ffffff;
+        }
+
+        .contenedor {
+            border: 3px solid #208060;
+            padding: 12px;
+            background-color: #ffffff;
+        }
+
+        .cabecera {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 6px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #ff0000;
+        }
+
+        .logo-img {
+            width: 260px;
+            height: auto;
+        }
+
+        .titulo-cabecera {
+            font-size: 26px;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .avion-img {
+            width: 280px;
+            height: auto;
+        }
+
+        .cuerpo {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 12px;
+        }
+
+        .menu a {
+            display: block;
+            text-decoration: none;
+        }
+
+        .menu button {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            width: 100%;
+            margin: 6px 0;
+            padding: 8px 10px;
+            background-color: #b0e8d8;
+            border: 1px solid #208060;
+            cursor: pointer;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .menu button:hover {
+            background-color: #70d0b0;
+        }
+
+        .zona-contenido {
+            border: 2px solid #208060;
+            background-color: #ffffff;
+            padding: 40px 30px;
+            min-height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .comprobante {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            padding: 30px 40px;
+            max-width: 480px;
+            width: 100%;
+        }
+
+        .comprobante h2 {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .comprobante .numero,
+        .comprobante .fecha {
+            text-align: center;
+            font-size: 15px;
+            margin-bottom: 6px;
+        }
+
+        .comprobante hr {
+            border: none;
+            border-bottom: 1px dashed #999;
+            margin: 12px 0;
+        }
+
+        .comprobante .fila {
+            font-size: 14px;
+            margin: 6px 0;
+        }
+
+        .comprobante .total {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .comprobante .firma {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+        /* TABLET */
+        @media (max-width: 900px) {
+            .cuerpo {
+                grid-template-columns: 1fr;
+            }
+
+            .cabecera {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+                text-align: center;
+            }
+
+            .logo-img, .avion-img {
+                width: 200px;
+            }
+
+            .titulo-cabecera {
+                font-size: 21px;
+            }
+        }
+
+        /* CELULAR */
+        @media (max-width: 500px) {
+            body {
+                margin: 7px;
+            }
+
+            .logo-img, .avion-img {
+                width: 160px;
+            }
+
+            .titulo-cabecera {
+                font-size: 17px;
+            }
+
+            .comprobante {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="cabecera">
+            <img src="img/logo.png" alt="Logo Paisaje Mágico" class="logo-img">
+            <div class="titulo-cabecera">AGENCIA DE VIAJES</div>
+            <img src="img/avion.png" alt="Avión" class="avion-img">
+        </div>
+
+        <div class="cuerpo">
+            <div class="menu">
+                <a href="index.html"><button>Inicio</button></a>
+                <a href="mision.html"><button>Mision y Vision</button></a>
+                <a href="objetivos.html"><button>Objetivos especificos</button></a>
+                <a href="historia.html"><button>Historia de Pereira y Armenia</button></a>
+                <a href="fotosArmenia.html"><button>fotos armenia</button></a>
+                <a href="fotosPereira.html"><button>Fotos pereira</button></a>
+                <a href="quienesSomos.html"><button>¿Quienes Somos?</button></a>
+                <a href="contactenos.html"><button>Contactenos</button></a>
+                <a href="pagos.html"><button>Forma de Pago</button></a>
+                <a href="video.html"><button>Video De Pereira y Armenia</button></a>
+            </div>
+
+            <div class="zona-contenido">
+                <div class="comprobante">
+                    <h2>Comprobante de Pago</h2>
+                    <div class="numero">Número 242</div>
+                    <div class="fecha">Fecha 29/03/2022</div>
+                    <hr>
+                    <div class="fila"><strong>Nombre:</strong> Paisaje Mágico</div>
+                    <div class="fila"><strong>Email:</strong> info@paisajemagico.com</div>
+                    <hr>
+                    <div class="fila"><strong>Nombre titular:</strong> Usuario Cliente</div>
+                    <div class="fila"><strong>ID Cliente:</strong> 003</div>
+                    <div class="fila"><strong>Fecha de pago:</strong> 19/11/2026</div>
+                    <div class="fila"><strong>Fecha de emisión:</strong> 19/11/2026 21:42</div>
+                    <div class="fila"><strong>Folio:</strong> 421</div>
+                    <hr>
+                    <div class="fila">Recibí el total de: <strong>$ 5.000.000</strong></div>
+                    <div class="fila">Concepto: Pago de servicio</div>
+                    <div class="fila total">Total: $ 5.000.000</div>
+                    <hr>
+                    <div class="firma">_________________________<br>Firma</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
